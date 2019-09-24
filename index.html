@@ -1,0 +1,36 @@
+<html>
+<head>
+	 <script type="text/javascript" src="scripts/vendor/angular.min.js"></script>
+	 <script type="text/javascript" src="app.js"></script>
+	 <script type="text/javascript" src="scripts/AlreadyBoughtController.js"></script>
+	 <script type="text/javascript" src="scripts/ToBuyController.js"></script>
+	 <script type="text/javascript" src="scripts/ShoppingListCheckOffService.js"></script>
+</head>
+<body ng-app="myApp">
+
+	<div class="row" ng-controller="ToBuyController as ToBuyController">
+		<h3> Buy List </h3>
+		<ul>
+			<li ng-repeat=" item in ToBuyController.toBuyItems">
+				Buy {{item.quantity}} {{item.name}}
+				<button ng-click="ToBuyController.addItemsToAlreadyBoughtList(item);">Bought</button>
+				<br>
+			</li>
+		</ul>
+		<div ng-if="ToBuyController.toBuyItems.length==0">Everything is bought!</div>
+	</div>
+
+	<div ng-controller="AlreadyBoughtController as AlreadyBoughtController">
+		<h3> Already Bought List </h3>
+		<ul>
+			<li ng-repeat=" item in AlreadyBoughtController.alreadyBoughtItems">
+				Bought {{item.quantity}} {{item.name}}
+				<br>
+			</li>
+		</ul>
+		<span ng-if="AlreadyBoughtController.alreadyBoughtItems.length==0">Nothing bought yet</span>
+	</div>
+
+</body>
+
+</html>
