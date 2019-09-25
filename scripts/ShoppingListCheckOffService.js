@@ -8,7 +8,9 @@ function ShoppingListCheckOffServiceFunction(){
 
 		{name:'Coca Cola',quantity:'3'},
 		{name:'Pepsi',quantity:'4'},
-		{name:'Limca',quantity:'7'}
+		{name:'Limca',quantity:'7'},
+		{name:'Lays',quantity:'3'},
+		{name:'Kurkure',quantity:'3'}
 
 	];
 
